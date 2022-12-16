@@ -18,6 +18,7 @@
 		"react-icons": "^4.7.1",
 		"recoil": "^0.7.6",
 		"spotify-web-api-node": "^5.0.2",
+		"superagent": "^8.0.6",
 		"tailwind-scrollbar-hide": "^1.1.7",
 		"tailwindcss-intersect": "^1.0.1"
 	},
