@@ -142,7 +142,7 @@ const Center = () => {
 					style={{
 						background: `linear-gradient(to top,  rgb(23 23 23) 0%,${playlistImageColor} 100%)`,
 					}}
-					className={`flex items-end w-full h-[380px] md:h-[460px] px-8 pb-20 space-x-7 text-white  brightness-110 `}
+					className={`flex items-end w-full h-[380px] md:h-[460px] px-4 sm:px-8 pb-20 space-x-7 text-white  brightness-110 `}
 				>
 					<span className="flex items-end w-full mb-12 space-x-7">
 						<img

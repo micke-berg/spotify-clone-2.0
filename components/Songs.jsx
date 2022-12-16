@@ -13,8 +13,8 @@ const Songs = () => {
 	};
 
 	return (
-		<div className="relative flex flex-col h-full min-h-screen -mt-24 pb-32 pt-24 px-8 space-y-1 text-white bg-neutral-900 bg-opacity-30 shadow-xl">
-			<PlayButton className="absolute -top-2 my-8 w-14 h-14 bg-[#1ed760] scale-105 hover:scale-[1.10] active:scale-100 active:opacity-70" />
+		<div className="relative flex flex-col h-full min-h-screen -mt-24 pb-32 pt-24 px-2 md:px-8 space-y-1 text-white bg-neutral-900 bg-opacity-30 shadow-xl">
+			<PlayButton className="absolute -top-2 my-8 ml-4 md:ml-0 w-14 h-14 bg-[#1ed760] scale-105 hover:scale-[1.10] active:scale-100 active:opacity-70" />
 			<div className="grid grid-cols-2 sticky z-10 top-16 pb-1 px-6 mt-1 text-xs text-neutral-300 bg-neutral-900 shadow-sm ">
 				<div className="flex items-center">
 					<span className="mr-4 text-lg text-neutral-400">#</span>
