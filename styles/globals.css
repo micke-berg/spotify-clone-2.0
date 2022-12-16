@@ -1,3 +1,43 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@layer components {
+	.button {
+		@apply h-5 w-5 cursor-pointer hover:text-white hover:scale-105 active:scale-100 transition transform duration-100 ease-out;
+	}
+	.list-item-button {
+		@apply flex items-center space-x-4 hover:text-white ease-in-out duration-300;
+	}
+	.icon-active {
+		@apply absolute p-[2px] bg-green-400 rounded-full;
+	}
+}
+
+input[type='range']::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	cursor: pointer;
+	visibility: 1;
+	opacity: 0;
+}
+
+input[type='range']::-webkit-slider-thumb:hover {
+	opacity: 1;
+}
+input[type='range']::-moz-range-thumb {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	height: 12px;
+	width: 12px;
+	border: 1px solid #c5c5c5;
+}
+
+input[type='range']::-moz-range-thumb {
+	border: none;
+	height: 14px;
+	width: 14px;
+	border-radius: 50%;
+	background: #1ed760;
+}
