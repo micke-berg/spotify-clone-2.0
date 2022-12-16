@@ -43,6 +43,24 @@ const Player = () => {
 	const currentPos = msToFullTime(currentPosition);
 	const trackDur = msToFullTime(trackDuration);
 
+	const fetchCurrentSong = () => {
+		if (!songInfo) {
+			console.log('no songInfo');
+			spotifyApi.getMyCurrentPlayingTrack().then((data) => {
+				console.log('Now playing ', data?.body?.item);
+				setCurrentTrackId(data?.body?.item?.id);
+				setTrackDuration(data?.body?.item?.duration_ms);
+
+				spotifyApi.getMyCurrentPlaybackState().then((data) => {
+					console.log('PlaybackState', data.body);
+					setIsPlaying(data?.body?.is_playing);
+					setCurrentPosition(data?.body?.progress_ms);
+					// setIsRepeat(data.body?.repeat_state);
+				});
+			});
+		}
+	};
+
 	useEffect(() => {
 		let interval = setInterval(() => {
 			spotifyApi.getMyCurrentPlaybackState().then((data) => {
@@ -57,7 +75,7 @@ const Player = () => {
 				setTrackDuration(data?.body?.item?.duration_ms);
 				setCurrentPosition(data?.body?.progress_ms);
 			});
-		}, 5000);
+		}, 4000);
 
 		return () => {
 			clearInterval(interval);
@@ -78,24 +96,6 @@ const Player = () => {
 	// 		setCurrentPosition(data?.body?.progress_ms);
 	// 	});
 	// }, [isPlaying]);
-
-	const fetchCurrentSong = () => {
-		if (!songInfo) {
-			console.log('no songInfo');
-			spotifyApi.getMyCurrentPlayingTrack().then((data) => {
-				console.log('Now playing ', data?.body?.item);
-				setCurrentTrackId(data?.body?.item?.id);
-				setTrackDuration(data?.body?.item?.duration_ms);
-
-				spotifyApi.getMyCurrentPlaybackState().then((data) => {
-					console.log('PlaybackState', data.body);
-					setIsPlaying(data?.body?.is_playing);
-					setCurrentPosition(data?.body?.progress_ms);
-					// setIsRepeat(data.body?.repeat_state);
-				});
-			});
-		}
-	};
 
 	useEffect(() => {
 		if (spotifyApi.getAccessToken() && !currentTrackId) {
